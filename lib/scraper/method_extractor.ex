@@ -1,5 +1,12 @@
 defmodule Scraper.MethodExtractor do
-  @empty_parameters ["deleteWebhook", "getWebhookInfo", "getMe", "getMyCommands"]
+  @empty_parameters [
+    "deleteWebhook",
+    "getWebhookInfo",
+    "getMe",
+    "getMyCommands",
+    "logOut",
+    "close"
+  ]
 
   def extract!(name, _) when name in @empty_parameters do
     %TelegramApi.Method{name: name}
